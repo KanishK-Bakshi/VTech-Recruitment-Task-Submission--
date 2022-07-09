@@ -1,0 +1,180 @@
+// Kanishk Bakshi (21BCI0132)
+// 9350856423
+#include <iostream>
+#include <string>
+#include <math.h>
+#include<cstdio>
+using namespace std;
+
+class user{
+public:
+    string password; 
+    string username;
+    string email;
+    long long number;
+    string name;
+
+};
+
+
+int main(){
+    int m ,x;
+    cout << "Enter the number of users you want to register ";
+    cin >> m;
+    fflush(stdin);
+    x = m-1;
+
+    class user u[x];
+    
+
+    cout << "Enter Details of User " << 1 << "\n";
+        
+    fflush(stdin);
+    cout << "Please Enter your Name for registration :-" << "\n";
+    getline(cin , u[0].name);
+    fflush(stdin);
+
+    cout << "Please Enter your Email for further registration :-" << "\n";
+    getline(cin , u[0].email);
+    fflush(stdin);
+
+    cout << "Please Enter your Number for further registration :-" << "\n";
+    cin >> u[0].number;
+    fflush(stdin);
+
+    cout << "Please Enter username of your choice :- " << "\n";
+    getline(cin , u[0].username);
+    fflush(stdin);
+    
+    cout << "Please Enter password to login again to our website :-" << "\n";
+    getline(cin , u[0].password);
+    fflush(stdin);
+    
+
+
+    cout << "\n\n\nYou Have successfully created profile\n\n\n";
+    cout << "-------*-------*-------*-------*-------\n\n\n";
+
+    cout << "*-------*------- 1. Login -------*-------*";
+    cout << "*-------*------- 2. Add New Profile -------*-------*";
+    cout << "-------*------- 3. Get Details -------*-------*";
+    cout << "-------*------- 4. Update Details -------*-------*";
+    cout << "-------*------- 5. Logout -------*-------*";
+
+    
+    int k;
+    cout << " Choose your prefrence ";
+    cin >> k;
+
+    switch (k)
+    {
+    case 1:
+        string user_entered_username;
+        string user_entered_password;
+
+        getline(cin , user_entered_username);
+        fflush(stdin);
+        getline(cin , user_entered_password);
+        fflush(stdin);
+
+        for (int i=0 ; i<=x ; i++){
+            if (user_entered_username == u[i].username  && user_entered_password == u[i].password){
+                cout << "You have been sucessfully Login";
+            }
+        }
+        break;
+    
+    case 2:
+        for (int i=1 ; i<=x ; i++){
+            cout << "Enter Details of User " << i+1 << "\n";
+
+            fflush(stdin);
+            cout << "Please Enter your Name for registration :-" << "\n";
+            getline(cin , u[i].name);
+            fflush(stdin);
+
+            cout << "Please Enter your Email for further registration :-" << "\n";
+            getline(cin , u[i].email);
+            fflush(stdin);
+
+            cout << "Please Enter your Number for further registration :-" << "\n";
+            cin >> u[i].number;
+            fflush(stdin);
+
+            cout << "Please Enter username of your choice :- " << "\n";
+            getline(cin , u[i].username);
+            fflush(stdin);
+
+            cout << "Please Enter password to login again to our website :-" << "\n";
+            getline(cin , u[i].password);
+            fflush(stdin);
+            }
+
+        break;
+
+    case 3:
+        cout << "Enter user number ";
+        int n;
+        cin >> n; 
+
+        cout << u[n].email;
+        cout << u[n].name;
+        cout << u[n].number;
+        cout << u[n].username;
+
+        break;
+
+    case 4:
+        cout << "Enter User Number you wan't to update details ";
+        int user_number;
+        cin >> user_number;
+
+        cout << " 1. Name \n 2.Number \n 3.Username \n 4.Email \n";
+        int q;
+        cin >> q;
+
+        switch (q)
+        {
+        case (1):
+            cout << "Enter new Name";
+            string new_updated_name;
+            u[user_number] = new_updated_name    
+            break;
+
+        case (2):
+            cout << "Enter new number";
+            string new_updated_number;
+            u[user_number] = new_updated_number;
+            break;
+
+        case (3):
+            cout << "Enter new Username";
+            string new_updated_username;
+            u[user_number] = new_updated_username;
+            break;
+
+        case (4):
+            cout << "Enter new Email";
+            string new_updated_email;
+            u[user_number] = new_updated_email;
+            break;        
+        
+        case (5):
+            cout << "You have been Successfully Logout. See you again ;)";
+
+        default:
+            cout << "Enter a Valid Input";
+            break;
+        }
+
+    
+    default:
+        cout << "You have enterd Wrong Choice ";
+        break;
+    }
+    
+    
+}
+
+// Kanishk Bakshi (21BCI0132)
+// 9350856423
